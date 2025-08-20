@@ -1,0 +1,43 @@
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencies
+node_modules/
+
+# Build outputs
+/dist
+/dist-ssr
+/coverage
+
+# Environment specific files
+*.local # .env.local, .env.development.local etc.
+
+# Test related (Cypress)
+/cypress/videos/
+/cypress/screenshots/
+
+# Editor directories and files
+.vscode/ # Ignore all VS Code files
+!.vscode/extensions.json # Except for recommended extensions file
+.idea/ # IntelliJ IDEA project files
+*.iml # IntelliJ IDEA module files
+*.iws # IntelliJ IDEA workspace files
+*.ipr # IntelliJ IDEA project files
+
+# Other IDE/System specific files (keep for broad compatibility, or remove if not needed)
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw? # Common temporary swap files
+.project # Eclipse project file
+.classpath # Eclipse classpath file
+.settings/ # Eclipse project settings
+
+# macOS specific
+.DS_Store
