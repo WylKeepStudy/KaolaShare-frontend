@@ -34,10 +34,10 @@ const router = createRouter({
           meta: { title: '关于 - 考拉快跑' }
         },
         {
-          path: 'file-list',
+          path: 'file-list/:departmentId?', // 添加动态路由参数，可选
           name: 'file-list',
-          component: () => import('@/views/Home/HomePage.vue'),
-          meta: { title: '文件列表 - 考拉快跑' }
+          component: () => import('@/views/Home/FileListPage.vue'),
+          meta: { title: '文件列表 - 考拉快跑'}
         }
       ]
     },
