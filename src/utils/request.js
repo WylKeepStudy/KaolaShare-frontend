@@ -29,9 +29,16 @@ service.interceptors.request.use(
 // 响应拦截器
 service.interceptors.response.use(
   response => {
+    // 如果响应类型是 'blob'，并且请求成功，则直接返回整个响应对象，不进行 JSON 格式的校验
+    // 这是为了处理文件下载的情况
+    if (response.request.responseType === 'blob' && response.status === 200) {
+      return response;
+    }
+
     // 对响应数据做些什么
     const res = response.data
-    // 如果后端定义了特定的错误码，可以在这里处理
+    
+    // 如果后端定义了特定的错误码，在这里处理
     // 假设你的后端成功状态码是 200，其他是错误
     if (res.code !== 200) {
       ElMessage.error(res.msg || 'Error')
